@@ -24,9 +24,105 @@
             <button>Productivity Timer</button>
         </div>
     </nav>
-    <div>
+    <section class ="calendar-container">
+        <h1 class = 'calendar-header'>Weekly Calendar</h1>
+        <div class ='day-cards'>
+            <div id = 'sunday-card'>
+                <h2 class = 'day-card-header'>Sunday</h2>
+                <ul class ='sunday list'>
+                    <li>demo</li>
+                </ul>
+
+            </div>
+            <div class = 'monday-card card'>
+                <h2 class = 'day-card-header'>Monday</h2>
+                <ul class ='monday list'>
+                    <li>demo</li>
+                </ul>
+            </div>
+            <div class = 'tuesday-card card'>
+                <h2 class = 'day-card-header'>Tuesday</h2>
+                <ul class ='tuesday list'>
+                    <li>demo</li>
+                </ul>
+                
+            </div>
+            <div class = 'wednesday-card card'>
+                <h2 class = 'day-card-header'>Wednesday</h2>
+                <ul class ='wednesday list'>
+                    <li>demo</li>
+                </ul>
+            </div>
+            <div class = 'thursday-card card'>
+                <h2 class = 'day-card-header'>Thursday</h2>
+                <ul class ='thursday list'>
+                    <li>demo</li>
+                </ul>
+            </div>
+            <div class = 'friday-card card'>
+                <h2 class = 'day-card-header'>Friday</h2>
+                <ul class ='friday list'>
+                    <li>demo</li>
+                </ul>
+            </div>
+            <div class = 'saturday-card card'>
+                <h2 class = 'day-card-header'>Saturday</h2>
+                <ul class ='saturday list'>
+                    <li>demo</li>
+                </ul>
+                
+            </div>
+        </div>
         
+    </section>
+    <section class = 'user-half'>
+    <div class = user-input  >
+        <form>
+            <label for ="day">Day of the week: </label>
+            <select id ='day'name ='day'>
+                <option value = ''disabled selected>Select Options</option>
+                <option value = 'toDo'>To Do</option>
+                <option value = 'sunday'>Sunday</option>
+                <option value = 'monday'>Monday</option>
+                <option value = 'tuesday'>Tuesday</option>
+                <option value = 'wednesday'>Wednesday</option>
+                <option value = 'thursday'>Thursday</option> 
+                <option value = 'friday'>Friday</option>
+                <option value = 'saturday'>Saturday</option>
+            </select>
+            <input class = 'input-text' type ='text'>
+            <input class = 'send-btn' type = 'submit' value = 'Send'>
+
+
+
+        </form>
+
+        <div class ='non-urgent-to-do'>
+            <h2 class ='non-urgent-to-do-title'>To Do list</h2>
+            <ul class ="non-urgent-list">
+            <li class ='non-urgent-list-items'>go skiing</li>
+    
+            </ul>
+        </div>
+
+
     </div>
+
+
+    <div class = "quote-carousel">
+
+<p> test</p>
+
+    </div>
+    </section>
+
+
+
+
+
+
+
+   
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script> -->
