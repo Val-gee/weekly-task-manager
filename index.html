@@ -1,134 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="Description" content="Enter your description here"/>
-<!-- Font Awesome -->
-<link
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-  rel="stylesheet"
-/>
-<!-- Google Fonts -->
-<link
-  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-  rel="stylesheet"
-/>
-<!-- MDB -->
-<link
-  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css"
-  rel="stylesheet"
-/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link rel="stylesheet" href="./Develop/css/style.css">
-<title>Motivational Webpage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./Develop/css/style.css">
+    <title>Motivational Webpage</title>
 </head>
+
 <body>
-    <nav class="navbar">
+    <!-- NAVBAR START-->
+    <nav class="navbar p-3 mb-2 bg-info bg-gradient text-dark">
         <div class="current-day-info">
             <h1 id="currentDate">Current Date</h1>
             <h2 id="currentTime">Current Time</h2>
             <h3 id="currentWeather">Current Weather</h3>
         </div>
         <div class="greeting">
-            <h1 id="greeting">hello!</h1>
+            <h4 id="greeting text-center">hello!</h4>
         </div>
         <div class="timer">
-            <button>Productivity Timer</button>
+            <button class="btn-rounded btn btn-light" data-mdb-ripple-color="dark">Productivity Timer</button>
         </div>
     </nav>
-    <section class ="calendar-container">
-        <h1 class = 'calendar-header'>Weekly Calendar</h1>
-        <div class ='day-cards'>
-            <div id = 'sunday-card'>
-                <h2 class = 'day-card-header'>Sunday</h2>
-                <ul class ='sunday list'>
-                    <li>demo</li>
-                </ul>
-
+    <!-- NAVBAR END -->
+    <!-- CALENDAR CONTAINER START -->
+    <section class='calendar container mt-5'>
+        <h1 class='calendar-header text-center fw-bolder'>Weekly Calendar</h1>
+            <div class='day-cards shadow-5 border'>
+                <div class='sunday-card card mt-4 border'>
+                    <h2 class='day-card-header text-center text-decoration-underline'>Sunday</h2>
+                    <ul class='sunday list'>
+                        <li>demo</li>
+                    </ul>
+                </div>
+                <div class='monday-card card mt-4 border'>
+                    <h2 class='day-card-header text-center text-decoration-underline'>Monday</h2>
+                    <ul class='monday list'>
+                        <li>demo</li>
+                    </ul>
+                </div>
+                <div class='tuesday-card card mt-4 border'>
+                    <h2 class='day-card-header text-center text-decoration-underline'>Tuesday</h2>
+                    <ul class='tuesday list'>
+                        <li>demo</li>
+                    </ul>
+                </div>
+                <div class='wednesday-card card mt-4 border'>
+                    <h2 class='day-card-header text-center text-decoration-underline'>Wednesday</h2>
+                    <ul class='wednesday list'>
+                        <li>demo</li>
+                    </ul>
+                </div>
+                <div class='thursday-card card mt-4 border'>
+                    <h2 class='day-card-header text-center text-decoration-underline'>Thursday</h2>
+                    <ul class='thursday list'>
+                        <li>demo</li>
+                    </ul>
+                </div>
+                <div class='friday-card card mt-4 border'>
+                    <h2 class='day-card-header text-center text-decoration-underline'>Friday</h2>
+                    <ul class='friday list'>
+                        <li>demo</li>
+                    </ul>
+                </div>
+                <div class='saturday-card card mt-4 mb-7 border'>
+                    <h2 class='day-card-header text-center text-decoration-underline'>Saturday</h2>
+                    <ul class='saturday list'>
+                        <li>demo</li>
+                    </ul>
+                </div>
             </div>
-            <div class = 'monday-card card'>
-                <h2 class = 'day-card-header'>Monday</h2>
-                <ul class ='monday list'>
-                    <li>demo</li>
-                </ul>
-            </div>
-            <div class = 'tuesday-card card'>
-                <h2 class = 'day-card-header'>Tuesday</h2>
-                <ul class ='tuesday list'>
-                    <li>demo</li>
-                </ul>
-                
-            </div>
-            <div class = 'wednesday-card card'>
-                <h2 class = 'day-card-header'>Wednesday</h2>
-                <ul class ='wednesday list'>
-                    <li>demo</li>
-                </ul>
-            </div>
-            <div class = 'thursday-card card'>
-                <h2 class = 'day-card-header'>Thursday</h2>
-                <ul class ='thursday list'>
-                    <li>demo</li>
-                </ul>
-            </div>
-            <div class = 'friday-card card'>
-                <h2 class = 'day-card-header'>Friday</h2>
-                <ul class ='friday list'>
-                    <li>demo</li>
-                </ul>
-            </div>
-            <div class = 'saturday-card card'>
-                <h2 class = 'day-card-header'>Saturday</h2>
-                <ul class ='saturday list'>
-                    <li>demo</li>
-                </ul>
-                
-            </div>
-        </div>
-        
     </section>
-    <section class = 'user-half'>
-    <div class = user-input  >
-        <form>
-            <label for ="day">Day of the week: </label>
-            <select id ='day'name ='day'>
-                <option value = ''disabled selected>Select Options</option>
-                <option value = 'toDo'>To Do</option>
-                <option value = 'sunday'>Sunday</option>
-                <option value = 'monday'>Monday</option>
-                <option value = 'tuesday'>Tuesday</option>
-                <option value = 'wednesday'>Wednesday</option>
-                <option value = 'thursday'>Thursday</option> 
-                <option value = 'friday'>Friday</option>
-                <option value = 'saturday'>Saturday</option>
-            </select>
-            <input class = 'input-text' type ='text'>
-            <input class = 'send-btn' type = 'submit' value = 'Send'>
+    <!-- CALENDAR CONTAINER END -->
+    <!-- BOTTOM SECTION (TO DO LIST & CAROUSEL START) -->
+    <section class='user-half'>
+        <!-- TO DO INPUT START -->
+        <div class= 'user-input'>
+            <form class="input-form border">
+                <h2 class="input-header mt-3 fs-4 text-center">Add a to-do item in the list below or into your weekly calendar to stay organized!</h2>
+                <label for="day">Day of the week: </label>
+                <select id='day' name='day'>
+                    <option value='' disabled selected>Select Options</option>
+                    <option value='toDo'>To Do</option>
+                    <option value='sunday'>Sunday</option>
+                    <option value='monday'>Monday</option>
+                    <option value='tuesday'>Tuesday</option>
+                    <option value='wednesday'>Wednesday</option>
+                    <option value='thursday'>Thursday</option>
+                    <option value='friday'>Friday</option>
+                    <option value='saturday'>Saturday</option>
+                </select>
+                <input class='input-text' type='text'>
+                <input class='send-btn' type='submit' value='Send'>
+            </form>
+            <!-- TO DO LIST START -->
+            <div class='non-urgent-to-do'>
+                <h2 class='non-urgent-to-do-title'>To Do list</h2>
+                <ul class="non-urgent-list">
+                    <li class='non-urgent-list-items'>go skiing</li>
 
-
-
-        </form>
-
-        <div class ='non-urgent-to-do'>
-            <h2 class ='non-urgent-to-do-title'>To Do list</h2>
-            <ul class ="non-urgent-list">
-            <li class ='non-urgent-list-items'>go skiing</li>
-    
-            </ul>
+                </ul>
+            </div>
+            <!-- TO DO LIST END -->
         </div>
+        <!-- TO DO INPUT END -->
+        <!-- MOTIVATIONAL QUOTES CAROUSEL START -->
+        <div class="quote-carousel">
 
+            <p> test</p>
 
-    </div>
+        </div>
+        <!-- MOTIVATIONAL QUOTES CAROUSEL START -->
 
-
-    <div class = "quote-carousel">
-
-<p> test</p>
-
-    </div>
     </section>
+    <!-- BOTTOM SECTION (TO DO LIST & CAROUSEL END) -->
+    <!-- FOOTER START -->
+    <footer>
+    </footer>
+    <!-- FOOTER END -->
 
 
 
@@ -137,14 +136,11 @@
 
 
 
-
-<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>  
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-<script
-  type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"
-></script>
-<script src = "./Develop/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
+    <script src="./Develop/js/script.js"></script>
 </body>
+
 </html>
