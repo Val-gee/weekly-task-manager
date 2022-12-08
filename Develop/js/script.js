@@ -73,14 +73,14 @@ timerButton.addEventListener("click", function() {
 //gets user's browser location
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
+    navigator.geolocation.getCurrentPosition(displayWeather);
   } else { 
     alert("Geolocation is not supported by this browser.");
   }
 }
 
 //creates API URL based on browser location and loads weather content on page
-function showPosition(position) {
+function displayWeather(position) {
     var latitude = position.coords.latitude; 
     var longitude = position.coords.longitude;
     var requestWeather = "https://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&appid=87e0914af1422e36fd0e0a7774720d6f";
