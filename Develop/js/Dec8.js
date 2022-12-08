@@ -1,4 +1,3 @@
-
 var currentDate = document.getElementById("currentDate"); ``
 var currentTime = document.getElementById("currentTime");
 var startBtn = document.getElementById('start-time') //for the add event listner to start timer
@@ -147,3 +146,5 @@ function displayWeather(position) {
 currentDayInfo();
 customizedGreeting();
 getLocation();
+
+
