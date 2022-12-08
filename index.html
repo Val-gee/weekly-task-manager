@@ -23,71 +23,74 @@
         <div class="current-day-info">
             <h1 id="currentDate">Current Date</h1>
             <h2 id="currentTime">Current Time</h2>
-            <h3 id="currentWeather">Current Weather</h3>
+            <h3 id="currentWeather"></h3>
+            <img id="weatherIcon" />
         </div>
         <div class="greeting">
             <h4 id="greeting text-center">hello!</h4>
         </div>
         <div class="timer">
             <button class="btn-rounded btn btn-light" data-mdb-ripple-color="dark">Productivity Timer</button>
+            <h2 id="countdown"></h2>
         </div>
     </nav>
     <!-- NAVBAR END -->
     <!-- CALENDAR CONTAINER START -->
     <section class='calendar container mt-5'>
         <h1 class='calendar-header text-center fw-bolder'>Weekly Calendar</h1>
-            <div class='day-cards shadow-5 border'>
-                <div class='sunday-card card mt-4 border'>
-                    <h2 class='day-card-header text-center text-decoration-underline'>Sunday</h2>
-                    <ul class='sunday list'>
-                        <li>demo</li>
-                    </ul>
-                </div>
-                <div class='monday-card card mt-4 border'>
-                    <h2 class='day-card-header text-center text-decoration-underline'>Monday</h2>
-                    <ul class='monday list'>
-                        <li>demo</li>
-                    </ul>
-                </div>
-                <div class='tuesday-card card mt-4 border'>
-                    <h2 class='day-card-header text-center text-decoration-underline'>Tuesday</h2>
-                    <ul class='tuesday list'>
-                        <li>demo</li>
-                    </ul>
-                </div>
-                <div class='wednesday-card card mt-4 border'>
-                    <h2 class='day-card-header text-center text-decoration-underline'>Wednesday</h2>
-                    <ul class='wednesday list'>
-                        <li>demo</li>
-                    </ul>
-                </div>
-                <div class='thursday-card card mt-4 border'>
-                    <h2 class='day-card-header text-center text-decoration-underline'>Thursday</h2>
-                    <ul class='thursday list'>
-                        <li>demo</li>
-                    </ul>
-                </div>
-                <div class='friday-card card mt-4 border'>
-                    <h2 class='day-card-header text-center text-decoration-underline'>Friday</h2>
-                    <ul class='friday list'>
-                        <li>demo</li>
-                    </ul>
-                </div>
-                <div class='saturday-card card mt-4 mb-7 border'>
-                    <h2 class='day-card-header text-center text-decoration-underline'>Saturday</h2>
-                    <ul class='saturday list'>
-                        <li>demo</li>
-                    </ul>
-                </div>
+        <div class='day-cards shadow-5 border'>
+            <div class='sunday-card card mt-4 border'>
+                <h2 class='day-card-header text-center text-decoration-underline'>Sunday</h2>
+                <ul class='sunday list'>
+                    <li>demo</li>
+                </ul>
             </div>
+            <div class='monday-card card mt-4 border'>
+                <h2 class='day-card-header text-center text-decoration-underline'>Monday</h2>
+                <ul class='monday list'>
+                    <li>demo</li>
+                </ul>
+            </div>
+            <div class='tuesday-card card mt-4 border'>
+                <h2 class='day-card-header text-center text-decoration-underline'>Tuesday</h2>
+                <ul class='tuesday list'>
+                    <li>demo</li>
+                </ul>
+            </div>
+            <div class='wednesday-card card mt-4 border'>
+                <h2 class='day-card-header text-center text-decoration-underline'>Wednesday</h2>
+                <ul class='wednesday list'>
+                    <li>demo</li>
+                </ul>
+            </div>
+            <div class='thursday-card card mt-4 border'>
+                <h2 class='day-card-header text-center text-decoration-underline'>Thursday</h2>
+                <ul class='thursday list'>
+                    <li>demo</li>
+                </ul>
+            </div>
+            <div class='friday-card card mt-4 border'>
+                <h2 class='day-card-header text-center text-decoration-underline'>Friday</h2>
+                <ul class='friday list'>
+                    <li>demo</li>
+                </ul>
+            </div>
+            <div class='saturday-card card mt-4 mb-7 border'>
+                <h2 class='day-card-header text-center text-decoration-underline'>Saturday</h2>
+                <ul class='saturday list'>
+                    <li>demo</li>
+                </ul>
+            </div>
+        </div>
     </section>
     <!-- CALENDAR CONTAINER END -->
     <!-- BOTTOM SECTION (TO DO LIST & CAROUSEL START) -->
     <section class='user-half'>
         <!-- TO DO INPUT START -->
-        <div class= 'user-input'>
+        <div class='user-input'>
             <form class="input-form border">
-                <h2 class="input-header mt-3 fs-4 text-center">Add a to-do item in the list below or into your weekly calendar to stay organized!</h2>
+                <h2 class="input-header mt-3 fs-4 text-center">Add a to-do item in the list below or into your weekly
+                    calendar to stay organized!</h2>
                 <label for="day">Day of the week: </label>
                 <select id='day' name='day'>
                     <option value='' disabled selected>Select Options</option>
