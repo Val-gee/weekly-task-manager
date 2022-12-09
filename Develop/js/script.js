@@ -1,11 +1,13 @@
 var currentDate = document.getElementById("currentDate");
-``;
 var currentTime = document.getElementById("currentTime");
 var startBtn = document.getElementById("start-time"); //for the add event listner to start timer
 var pauseBtn = document.getElementById("pause"); //for the add event listener to the puase button
 //timer button
 var timerButton = document.querySelector(".timer");
 var wasClicked = false;
+
+//apiKey
+//var quoteAPI = `https://zenquotes.io/api/quotes/`
 
 //countdown variables
 var secondsLeft = 0;
@@ -167,7 +169,7 @@ var friday = document.querySelector(".friday");
 var saturday = document.querySelector(".saturday");
 
 //initial input array
-var inputArray = [[],[],[],[],[],[],[],[]];
+var inputArray = [[], [], [], [], [], [], [], []];
 
 //gets save data from local storage and parses into array
 var savedString = localStorage.getItem("item-array");
@@ -175,197 +177,206 @@ var savedArray = JSON.parse(savedString);
 
 //if there is save data, inputArray will include it
 if (savedArray != null) {
-    inputArray = savedArray;
+  inputArray = savedArray;
 }
 
 //prints input text to page based on user input and saves in local storage
-sendBtn.addEventListener("click", function(event) {
-    
-    event.preventDefault();
-    
-    //creates new elements to display user input
-    var listItem = document.createElement("li");
-    var itemDelete = document.createElement("button");
+sendBtn.addEventListener("click", function (event) {
+  event.preventDefault();
 
-    //vars with user input
-    var selectedIndex = selectedDay.selectedIndex;
-    var selectedValue = options[selectedIndex].value;
-    var input = inputText.value;
+  //creates new elements to display user input
+  var listItem = document.createElement("li");
+  var itemDelete = document.createElement("button");
 
-    //styling for content being created
-    listItem.textContent = input;
-    listItem.style.display = "inline";
-    listItem.style.margin = "0 5px 0 0";
-    itemDelete.style.backgroundImage = "url('Develop/images/x-button.png')";
-    itemDelete.style.backgroundSize = "contain";
-    itemDelete.style.borderStyle = "none";
-    itemDelete.style.backgroundColor = "none";
-    itemDelete.style.width = "18px";
-    itemDelete.style.height = "18px";
+  //vars with user input
+  var selectedIndex = selectedDay.selectedIndex;
+  var selectedValue = options[selectedIndex].value;
+  var input = inputText.value;
 
-    //appends new elements in appropriate area of page
-    if (selectedValue === "toDo") {
-        toDoList.appendChild(listItem);
-        toDoList.appendChild(itemDelete);
-        inputArray[0].push(input);
-    } else if (selectedValue === "sunday") {
-        sunday.appendChild(listItem);
-        sunday.appendChild(itemDelete);
-        inputArray[1].push(input);
-    } else if (selectedValue === "monday") {
-        monday.appendChild(listItem);
-        monday.appendChild(itemDelete);
-        inputArray[2].push(input);
-    } else if (selectedValue === "tuesday") {
-        tuesday.appendChild(listItem);
-        tuesday.appendChild(itemDelete);
-        inputArray[3].push(input);
-    } else if (selectedValue === "wednesday") {
-        wednesday.appendChild(listItem);
-        wednesday.appendChild(itemDelete);
-        inputArray[4].push(input);
-    } else if (selectedValue === "thursday") {
-        thursday.appendChild(listItem);
-        thursday.appendChild(itemDelete);
-        inputArray[5].push(input);
-    } else if (selectedValue === "friday") {
-        friday.appendChild(listItem);
-        friday.appendChild(itemDelete);
-        inputArray[6].push(input);
-    } else {
-        saturday.appendChild(listItem);
-        saturday.appendChild(itemDelete);
-        inputArray[7].push(input);
-    }
+  //styling for content being created
+  listItem.textContent = input;
+  listItem.style.display = "inline";
+  listItem.style.margin = "0 5px 0 0";
+  itemDelete.style.backgroundImage = "url('Develop/images/x-button.png')";
+  itemDelete.style.backgroundSize = "contain";
+  itemDelete.style.borderStyle = "none";
+  itemDelete.style.backgroundColor = "none";
+  itemDelete.style.width = "18px";
+  itemDelete.style.height = "18px";
 
-    //converts newly-modified inputArray to JSON and saves in local storage 
-    var inputArrayFormatted = JSON.stringify(inputArray);
-    localStorage.setItem("item-array", inputArrayFormatted);
-    
-    //deletes to-do task from page and updates local storage
-    function deleteItem() {
-    
-        var thisItemText = listItem.textContent;
-        listItem.remove();
-        itemDelete.remove();
-        for (var x = 0; x < inputArray.length; x++) {
-            for (var i = 0; i < inputArray[x].length; i++) {
-                var selectedItem = inputArray[x][i];
-                if (selectedItem == thisItemText) {
-                    inputArray[x].splice(i, 1);    
-                }
-            }
+  //appends new elements in appropriate area of page
+  if (selectedValue === "toDo") {
+    toDoList.appendChild(listItem);
+    toDoList.appendChild(itemDelete);
+    inputArray[0].push(input);
+  } else if (selectedValue === "sunday") {
+    sunday.appendChild(listItem);
+    sunday.appendChild(itemDelete);
+    inputArray[1].push(input);
+  } else if (selectedValue === "monday") {
+    monday.appendChild(listItem);
+    monday.appendChild(itemDelete);
+    inputArray[2].push(input);
+  } else if (selectedValue === "tuesday") {
+    tuesday.appendChild(listItem);
+    tuesday.appendChild(itemDelete);
+    inputArray[3].push(input);
+  } else if (selectedValue === "wednesday") {
+    wednesday.appendChild(listItem);
+    wednesday.appendChild(itemDelete);
+    inputArray[4].push(input);
+  } else if (selectedValue === "thursday") {
+    thursday.appendChild(listItem);
+    thursday.appendChild(itemDelete);
+    inputArray[5].push(input);
+  } else if (selectedValue === "friday") {
+    friday.appendChild(listItem);
+    friday.appendChild(itemDelete);
+    inputArray[6].push(input);
+  } else {
+    saturday.appendChild(listItem);
+    saturday.appendChild(itemDelete);
+    inputArray[7].push(input);
+  }
+
+  //converts newly-modified inputArray to JSON and saves in local storage
+  var inputArrayFormatted = JSON.stringify(inputArray);
+  localStorage.setItem("item-array", inputArrayFormatted);
+
+  //deletes to-do task from page and updates local storage
+  function deleteItem() {
+    var thisItemText = listItem.textContent;
+    listItem.remove();
+    itemDelete.remove();
+    for (var x = 0; x < inputArray.length; x++) {
+      for (var i = 0; i < inputArray[x].length; i++) {
+        var selectedItem = inputArray[x][i];
+        if (selectedItem == thisItemText) {
+          inputArray[x].splice(i, 1);
         }
-        inputArrayFormatted = JSON.stringify(inputArray);
-        localStorage.setItem("item-array", inputArrayFormatted);
+      }
     }
-    itemDelete.addEventListener("click", deleteItem);
+    inputArrayFormatted = JSON.stringify(inputArray);
+    localStorage.setItem("item-array", inputArrayFormatted);
+  }
+  itemDelete.addEventListener("click", deleteItem);
 });
 
 //prints saved data to page on load
 function printLocalStorage() {
+  //nested for loop to scan 2D array
+  for (var x = 0; x < inputArray.length; x++) {
+    for (var i = 0; i < inputArray[x].length; i++) {
+      //current item being scanned in for loop
+      var selectedItem = inputArray[x][i];
 
-    //nested for loop to scan 2D array
+      //creates elements to display user input and adds classes to identify based on position in array
+      var listItem = document.createElement("li");
+      listItem.setAttribute("class", x + "-" + i);
+
+      var itemDelete = document.createElement("button");
+      itemDelete.setAttribute("class", "delete-buttons");
+      itemDelete.setAttribute("id", x + "-" + i);
+
+      //styles new elements
+      listItem.style.display = "inline";
+      listItem.style.margin = "0 5px 0 0";
+      itemDelete.style.backgroundImage = "url('Develop/images/x-button.png')";
+      itemDelete.style.backgroundSize = "contain";
+      itemDelete.style.borderStyle = "none";
+      itemDelete.style.backgroundColor = "none";
+      itemDelete.style.width = "18px";
+      itemDelete.style.height = "18px";
+      listItem.textContent = selectedItem;
+
+      //if statement to ensure saved items display to correct area of application
+      if (x === 0) {
+        toDoList.appendChild(listItem);
+        toDoList.appendChild(itemDelete);
+      }
+      if (x === 1) {
+        sunday.appendChild(listItem);
+        sunday.appendChild(itemDelete);
+      }
+      if (x === 2) {
+        monday.appendChild(listItem);
+        monday.appendChild(itemDelete);
+      }
+      if (x === 3) {
+        tuesday.appendChild(listItem);
+        tuesday.appendChild(itemDelete);
+      }
+      if (x === 4) {
+        wednesday.appendChild(listItem);
+        wednesday.appendChild(itemDelete);
+      }
+      if (x === 5) {
+        thursday.appendChild(listItem);
+        thursday.appendChild(itemDelete);
+      }
+      if (x === 6) {
+        friday.appendChild(listItem);
+        friday.appendChild(itemDelete);
+      }
+      if (x === 7) {
+        saturday.appendChild(listItem);
+        saturday.appendChild(itemDelete);
+      }
+    }
+  }
+
+  //selects all delete buttons
+  var deleteButtons = document.querySelectorAll(".delete-buttons");
+
+  //adds click functionality to delete button
+  for (var z = 0; z < deleteButtons.length; z++) {
+    deleteButtons[z].addEventListener("click", deleteItem);
+  }
+
+  //deletes clicked to-do and updates local storage
+  function deleteItem() {
+    //uses this to locate elements to be deleted and deletes them
+    var thisDelete = this;
+    var thisListItem = this.previousElementSibling;
+    thisDelete.remove();
+    thisListItem.remove();
+
     for (var x = 0; x < inputArray.length; x++) {
-        for (var i = 0; i < inputArray[x].length; i++) {
-            
-            //current item being scanned in for loop
-            var selectedItem = inputArray[x][i];
-            
-            //creates elements to display user input and adds classes to identify based on position in array
-            var listItem = document.createElement("li");
-            listItem.setAttribute("class", x + "-" + i);
-
-            var itemDelete = document.createElement("button");
-            itemDelete.setAttribute("class", "delete-buttons");
-            itemDelete.setAttribute("id", x + "-" + i);
-  
-            //styles new elements
-            listItem.style.display = "inline";
-            listItem.style.margin = "0 5px 0 0";
-            itemDelete.style.backgroundImage = "url('Develop/images/x-button.png')";
-            itemDelete.style.backgroundSize = "contain";
-            itemDelete.style.borderStyle = "none";
-            itemDelete.style.backgroundColor = "none";
-            itemDelete.style.width = "18px";
-            itemDelete.style.height = "18px";
-            listItem.textContent = selectedItem;
-
-            //if statement to ensure saved items display to correct area of application
-           if (x === 0) {
-                toDoList.appendChild(listItem);
-                toDoList.appendChild(itemDelete);
-                
-           } 
-           if (x === 1) {
-                sunday.appendChild(listItem);
-                sunday.appendChild(itemDelete);
-           }
-           if (x === 2) {
-                monday.appendChild(listItem);
-                monday.appendChild(itemDelete);
-            }
-            if (x === 3) {
-                tuesday.appendChild(listItem);
-                tuesday.appendChild(itemDelete);
-            }
-            if (x === 4) {
-                wednesday.appendChild(listItem);
-                wednesday.appendChild(itemDelete);
-            }
-            if (x === 5) {
-                thursday.appendChild(listItem);
-                thursday.appendChild(itemDelete);
-            }
-            if (x === 6) {
-                friday.appendChild(listItem);
-                friday.appendChild(itemDelete);
-            } 
-            if (x === 7) {
-                saturday.appendChild(listItem);
-                saturday.appendChild(itemDelete);
-            }
+      for (var i = 0; i < inputArray[x].length; i++) {
+        var selectedItem = inputArray[x][i];
+        if (selectedItem == thisListItem.textContent) {
+          inputArray[x].splice(i, 1);
         }
+      }
     }
 
-    //selects all delete buttons
-    var deleteButtons = document.querySelectorAll(".delete-buttons");
-
-    //adds click functionality to delete button
-    for (var z = 0; z < deleteButtons.length; z++){
-
-        deleteButtons[z].addEventListener("click", deleteItem);
-    }
-
-    //deletes clicked to-do and updates local storage
-    function deleteItem() {
-
-        //uses this to locate elements to be deleted and deletes them
-        var thisDelete = this;
-        var thisListItem = this.previousElementSibling;
-        thisDelete.remove();
-        thisListItem.remove();
-
-        for (var x = 0; x < inputArray.length; x++) {
-            for (var i = 0; i < inputArray[x].length; i++) {
-                var selectedItem = inputArray[x][i];
-                if (selectedItem == thisListItem.textContent) {
-                    inputArray[x].splice(i, 1);
-                }
-
-            }
-        }
-
-        //saves updated data in local storage
-        var inputArrayFormatted = JSON.stringify(inputArray);
-        localStorage.setItem("item-array", inputArrayFormatted);
-
- 
-    }
-
-
+    //saves updated data in local storage
+    var inputArrayFormatted = JSON.stringify(inputArray);
+    localStorage.setItem("item-array", inputArrayFormatted);
+  }
 }
 
+// quote carousel
+var category = "inspirational";
+
+$.ajax({
+    method: 'GET',
+    url: 'https://api.api-ninjas.com/v1/quotes?limit=10&category=' + category,
+    headers: { 'X-Api-Key': 'qqoTUSZvUbFCBjayEmFVIg==V6OGJcGtLVFiV2ym'},
+    contentType: 'application/json',
+    length: 10,
+    success: function(result) {
+        console.log(result);
+    },
+    error: function ajaxError(jqXHR) {
+        console.error('Error: ', jqXHR.responseText);
+    }
+});
+
+
+// getapi(api_url);
+
+//getDailyQuote();
 printLocalStorage();
 currentDayInfo();
 customizedGreeting();
