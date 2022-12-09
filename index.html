@@ -1,190 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="Description" content="Enter your description here" />
-    <!-- Font Awesome -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- MDB -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <link rel="stylesheet" href="./Develop/css/style.css" />
-    <title>Motivational Webpage</title>
-  </head>
 
-  <body>
-    <!-- NAVBAR START-->
-    <nav class="navbar p-3 mb-2 bg-info bg-gradient text-dark">
-      <div class="current-day-info">
-        <h1 id="currentDate">Current Date</h1>
-        <h2 id="currentTime">Current Time</h2>
-        <h3 id="currentWeather"></h3>
-        <img id="weatherIcon" />
-      </div>
-      <div class="greeting-header">
-        <h1 id="greeting"></h1>
-      </div>
-      <div class="timer">
-        <button class="btn-rounded btn btn-light text-info" data-mdb-ripple-color="dark">
-          Productivity Timer
-        </button>
-        <h2 id="countdown"></h2>
-      </div>
-    </nav>
-    <!-- NAVBAR END -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="Description" content="Enter your description here" />
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="stylesheet" href="./Develop/css/style.css" />
+  <title>Motivational Webpage</title>
+</head>
 
-    <!-- BOTTOM SECTION (TO DO LIST & CAROUSEL START) -->
-    <section
-      class="user-half row row-cols-2 container-fluid justify-content-evenly bg-light mb-4 g-0 px-0"
-    >
-      <!-- TO DO INPUT START -->
-      <div class="user-input col-5">
-        <form class="input-form border m-2 text-center">
-          <h2 class="input-header mt-3 fs-4 text-center">
-            Add a to-do item in the list below or into your weekly calendar to
-            stay organized!
-          </h2>
-          <label for="day" class="mb-2">Day of the week: </label>
-          <select id="day" name="day">
-            <option value="" disabled selected>Select Options</option>
-            <option value="toDo">To Do</option>
-            <option value="sunday">Sunday</option>
-            <option value="monday">Monday</option>
-            <option value="tuesday">Tuesday</option>
-            <option value="wednesday">Wednesday</option>
-            <option value="thursday">Thursday</option>
-            <option value="friday">Friday</option>
-            <option value="saturday">Saturday</option>
-          </select>
-          <input class="input-text mb-2" type="text" />
-          <input class="send-btn btn-rounded btn btn-info mb-2" type="submit" value="Send" />
-        </form>
-        <!-- TO DO LIST START -->
-        <div class="non-urgent-to-do border m-2">
-          <h2 class="non-urgent-to-do-title text-center mt-3">To Do list</h2>
-          <ul class="non-urgent-list">
-            <li class="non-urgent-list-items">go skiing</li>
-          </ul>
-        </div>
-        <!-- TO DO LIST END -->
+<body>
+  <!-- NAVBAR START-->
+  <nav class="navbar p-3 mb-2 bg-info bg-gradient text-dark">
+    <div class="current-day-info">
+      <h1 id="currentDate">Current Date</h1>
+      <h2 id="currentTime">Current Time</h2>
+      <h3 id="currentWeather"></h3>
+      <img id="weatherIcon" />
+    </div>
+    <div class="greeting-header">
+      <h1 id="greeting"></h1>
+    </div>
+    <div class="timer">
+      <button id='start-time' class="btn-rounded btn btn-light" data-mdb-ripple-color="dark">Start Timer</button>
+      <button id='pause' class='btn-rounded btn btn-light' data-mdb-ripple-color="dark">Pause Timer</button>
+      <button class='btn-rounded btn btn-light' data-mdb-ripple-color='dark'> End Timer</button>
+      <h2 id="countdown"></h2>
+
+    </div>
+  </nav>
+  <!-- NAVBAR END -->
+
+  <!-- BOTTOM SECTION (TO DO LIST & CAROUSEL START) -->
+  <section class="user-half row row-cols-2 container-fluid justify-content-evenly bg-light mb-4 g-0 px-0">
+    <!-- TO DO INPUT START -->
+    <div class="user-input col-5">
+      <form class="input-form border m-2 text-center">
+        <h2 class="input-header mt-3 fs-4 text-center">
+          Add a to-do item in the list below or into your weekly calendar to
+          stay organized!
+        </h2>
+        <label for="day" class="mb-2">Day of the week: </label>
+        <select id="day" name="day">
+          <option value="" disabled selected>Select Options</option>
+          <option value="toDo">To Do</option>
+          <option value="sunday">Sunday</option>
+          <option value="monday">Monday</option>
+          <option value="tuesday">Tuesday</option>
+          <option value="wednesday">Wednesday</option>
+          <option value="thursday">Thursday</option>
+          <option value="friday">Friday</option>
+          <option value="saturday">Saturday</option>
+        </select>
+        <input class="inputText mb-2" type="text" />
+        <input class="sendBtn btn-rounded btn btn-info mb-2" type="submit" value="Send" />
+      </form>
+      <!-- TO DO LIST START -->
+      <div class="non-urgent-to-do border m-2">
+        <h2 class="non-urgent-to-do-title text-center mt-3">To Do list</h2>
+        <ul class="toDoList">
+        </ul>
       </div>
-      <!-- TO DO INPUT END -->
+      <!-- TO DO LIST END -->
+    </div>
+    <!-- TO DO INPUT END -->
 
-      <!-- MOTIVATIONAL QUOTES CAROUSEL START -->
-      <div class="quote-carousel col-7 border mt-2">
-        <p>test</p>
+    <!-- MOTIVATIONAL QUOTES CAROUSEL START -->
+    <div class="quote-carousel col-7 border mt-2">
+      <p>test</p>
+    </div>
+    <!-- MOTIVATIONAL QUOTES CAROUSEL START -->
+  </section>
+  <!-- BOTTOM SECTION (TO DO LIST & CAROUSEL END) -->
+
+  <!-- CALENDAR CONTAINER START -->
+  <section class="calendar g-0 mt-5 bg-info" style="--mdb-bg-opacity: 0.5;">
+    <h1 class="calendar-header text-center fw-bold fs-8">Weekly Calendar</h1>
+    <div class="day-cards row row-cols-7 container-fluid justify-content-evenly bg-info mb-4 g-0 px-0">
+      <div class="col sunday-card card mt-4 border">
+        <h2 class="day-card-header text-center text-decoration-underline m-2 fs-5">
+          Sunday
+        </h2>
+        <ul class="sunday list">
+        </ul>
       </div>
-      <!-- MOTIVATIONAL QUOTES CAROUSEL START -->
-    </section>
-    <!-- BOTTOM SECTION (TO DO LIST & CAROUSEL END) -->
-
-    <!-- CALENDAR CONTAINER START -->
-    <section class="calendar g-0 mt-5 bg-info" style="--mdb-bg-opacity: 0.5;">
-      <h1 class="calendar-header text-center fw-bold fs-8">Weekly Calendar</h1>
-      <div
-        class="day-cards row row-cols-7 container-fluid justify-content-evenly bg-info mb-4 g-0 px-0"
-      >
-        <div class="col sunday-card card mt-4 border">
-          <h2
-            class="day-card-header text-center text-decoration-underline m-2 fs-5"
-          >
-            Sunday
-          </h2>
-          <ul class="sunday list">
-            <li>demo</li>
-          </ul>
-        </div>
-        <div class="col monday-card card mt-4 border">
-          <h2
-            class="day-card-header text-center text-decoration-underline m-2 fs-5"
-          >
-            Monday
-          </h2>
-          <ul class="monday list">
-            <li>demo</li>
-          </ul>
-        </div>
-        <div class="col tuesday-card card mt-4 border">
-          <h2
-            class="day-card-header text-center text-decoration-underline m-2 fs-5"
-          >
-            Tuesday
-          </h2>
-          <ul class="tuesday list">
-            <li>demo</li>
-          </ul>
-        </div>
-        <div class="col wednesday-card card mt-4 border">
-          <h2
-            class="day-card-header text-center text-decoration-underline m-2 fs-5"
-          >
-            Wednesday
-          </h2>
-          <ul class="wednesday list">
-            <li>demo</li>
-          </ul>
-        </div>
-        <div class="col thursday-card card mt-4 border">
-          <h2
-            class="day-card-header text-center text-decoration-underline m-2 fs-5"
-          >
-            Thursday
-          </h2>
-          <ul class="thursday list">
-            <li>demo</li>
-          </ul>
-        </div>
-        <div class="col friday-card card mt-4 border">
-          <h2
-            class="day-card-header text-center text-decoration-underline m-2 fs-5"
-          >
-            Friday
-          </h2>
-          <ul class="friday list">
-            <li>demo</li>
-          </ul>
-        </div>
-        <div class="col saturday-card card mt-4 border">
-          <h2
-            class="day-card-header text-center text-decoration-underline m-2 fs-5"
-          >
-            Saturday
-          </h2>
-          <ul class="saturday list">
-            <li>demo</li>
-          </ul>
-        </div>
+      <div class="col monday-card card mt-4 border">
+        <h2 class="day-card-header text-center text-decoration-underline m-2 fs-5">
+          Monday
+        </h2>
+        <ul class="monday list">
+        </ul>
       </div>
-    </section>
-    <!-- CALENDAR CONTAINER END -->
+      <div class="col tuesday-card card mt-4 border">
+        <h2 class="day-card-header text-center text-decoration-underline m-2 fs-5">
+          Tuesday
+        </h2>
+        <ul class="tuesday list">
+        </ul>
+      </div>
+      <div class="col wednesday-card card mt-4 border">
+        <h2 class="day-card-header text-center text-decoration-underline m-2 fs-5">
+          Wednesday
+        </h2>
+        <ul class="wednesday list">
+        </ul>
+      </div>
+      <div class="col thursday-card card mt-4 border">
+        <h2 class="day-card-header text-center text-decoration-underline m-2 fs-5">
+          Thursday
+        </h2>
+        <ul class="thursday list">
+        </ul>
+      </div>
+      <div class="col friday-card card mt-4 border">
+        <h2 class="day-card-header text-center text-decoration-underline m-2 fs-5">
+          Friday
+        </h2>
+        <ul class="friday list">
+        </ul>
+      </div>
+      <div class="col saturday-card card mt-4 border">
+        <h2 class="day-card-header text-center text-decoration-underline m-2 fs-5">
+          Saturday
+        </h2>
+        <ul class="saturday list">
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- CALENDAR CONTAINER END -->
 
-    <!-- FOOTER START -->
-    <footer></footer>
-    <!-- FOOTER END -->
+  <!-- FOOTER START -->
+  <footer></footer>
+  <!-- FOOTER END -->
 
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"
-    ></script>
-    <script src="./Develop/js/script.js"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
+  <script src="./Develop/js/script.js"></script>
+</body>
+
 </html>
