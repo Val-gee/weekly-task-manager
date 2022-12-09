@@ -399,7 +399,7 @@ function printLocalStorage() {
       for (var i = 0; i < inputArray[x].length; i++) {
         var saveItemId = x + "-" + i;
         var thisItemId = this.id;
-        console.log(thisItemId)
+        console.log(thisItemId);
         if (saveItemId == thisItemId) {
           inputArray[i].splice(i, 1);
         }
