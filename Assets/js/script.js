@@ -1,20 +1,10 @@
 var category = "inspirational";
 var currentDate = document.getElementById("currentDate");
 var currentTime = document.getElementById("currentTime");
-//var startBtn = document.getElementById("start-time"); //for the add event listner to start timer
-//var pauseBtn = document.getElementById("pause"); //for the add event listener to the pause button
-//timer button
-//var timerButton = document.querySelector(".timer");
-//var wasClicked = false;
+
 var giphyDisplay = document.querySelector(".giphy");
 var giphyImage = document.querySelector(".giphyImage");
 
-//countdown variables
-//var secondsLeft = 3;
-//var minutesLeft = 0;
-//var countdown = document.getElementById("countdown");
-
-//greeting
 var greeting = document.getElementById("greeting");
 
 //prints date and time every second
@@ -64,12 +54,12 @@ function customizedGreeting() {
 }
 var startBtn = document.getElementById("start-time");
 //var pauseBtn = document.getElementById("pause");
-var timeDisplay = document.querySelector('.hide')
+var timeDisplay = document.querySelector(".hide");
 
-var mySeconds = document.querySelector('#seconds');
-var myMinutes = document.querySelector('#minutes');
+var mySeconds = document.querySelector("#seconds");
+var myMinutes = document.querySelector("#minutes");
 var timerId;
-startBtn.textContent = 'Start';
+startBtn.textContent = "Start";
 
 // Set the initial time in minutes and seconds
 var minutes = 1;
@@ -87,42 +77,35 @@ function startTimer() {
   }
   // If the minutes and seconds reach 0, stop the timer
   if (minutes == 0 && seconds == 0) {
-    //alert('done');
-    mySeconds.textContent = '00';
+    mySeconds.textContent = "00";
     $("#myModal").modal("show");
-    //callGiphy();
-    //timeDisplay.classList.add('hide');
     clearInterval(intervalId);
     intervalId = false;
     minutes = 60;
     seconds = 0;
-    startBtn.textContent = 'Start';
+    startBtn.textContent = "Start";
     return;
   }
   // Display the time remaining in minutes and seconds
-  myMinutes.textContent = minutes + ':';
+  myMinutes.textContent = minutes + ":";
   mySeconds.textContent = seconds;
   if (seconds > 0 && seconds < 10) {
-    mySeconds.textContent = '0' + seconds;
+    mySeconds.textContent = "0" + seconds;
   }
 }
 
 var intervalId;
-startBtn.addEventListener('click', function () {
-  timeDisplay.classList.remove('hide');
+startBtn.addEventListener("click", function () {
+  timeDisplay.classList.remove("hide");
   if (!intervalId) {
-    intervalId = setInterval(startTimer, 1000); // TODO CHANGE TIMER TO 1000 for production
-    startBtn.textContent = 'Pause';
-
-
-
-  } else if (startBtn.textContent === 'Pause') {
+    intervalId = setInterval(startTimer, 1000);
+    startBtn.textContent = "Pause";
+  } else if (startBtn.textContent === "Pause") {
     clearInterval(intervalId);
     intervalId = false;
-    startBtn.textContent = 'Start';
+    startBtn.textContent = "Start";
   }
-})
-
+});
 
 // Get the modal
 var modal = document.getElementById("myModal");
@@ -131,8 +114,6 @@ var modal = document.getElementById("myModal");
 modal.addEventListener("show.mdb.modal", function (e) {
   callGiphy();
 });
-
-
 
 //gets user's browser location
 function getLocation() {
@@ -222,7 +203,7 @@ sendBtn.addEventListener("click", function (event) {
   listItem.textContent = input;
   listItem.style.display = "inline";
   listItem.style.margin = "0 5px 0 0";
-  itemDelete.style.backgroundImage = "url('Develop/images/x-button.png')";
+  itemDelete.style.backgroundImage = "url('Assets/images/x-button.png')";
   itemDelete.style.backgroundSize = "contain";
   itemDelete.style.borderStyle = "none";
   itemDelete.style.backgroundColor = "none";
@@ -231,7 +212,11 @@ sendBtn.addEventListener("click", function (event) {
   itemDelete.style.display = "inline";
 
   //appends new elements in appropriate area of page
-  if (selectedValue === "toDo") {
+  //if (selectedValue == "") {
+  //  return;
+  //}
+   
+   if (selectedValue === "toDo") {
     toDoList.appendChild(listItem);
     toDoList.appendChild(itemDelete);
     toDoList.appendChild(lineBreak);
@@ -431,7 +416,7 @@ sendBtn.addEventListener("click", function (event) {
 });
 
 //prints saved data to page on load
-function printLocalStorage() { }
+function printLocalStorage() {}
 
 function printLocalStorage() {
   //nested for loop to scan 2D array
@@ -453,7 +438,7 @@ function printLocalStorage() {
       //styles new elements
       listItem.style.display = "inline";
       listItem.style.margin = "0 5px 0 0";
-      itemDelete.style.backgroundImage = "url('Develop/images/x-button.png')";
+      itemDelete.style.backgroundImage = "url('Assets/images/x-button.png')";
       itemDelete.style.backgroundSize = "contain";
       itemDelete.style.borderStyle = "none";
       itemDelete.style.backgroundColor = "none";
@@ -567,7 +552,6 @@ function deleteItem() {
             }
           } else if (x === 2) {
             for (var b = 0; b < mondayItems.length; b += 3) {
-              var t = 0;
               var thisList = mondayItems[b];
               var thisX = mondayItems[b].nextElementSibling;
               thisList.removeAttribute("class");
@@ -579,7 +563,6 @@ function deleteItem() {
             }
           } else if (x === 3) {
             for (var b = 0; b < tuesdayItems.length; b += 3) {
-              var t = 0;
               var thisList = tuesdayItems[b];
               var thisX = tuesdayItems[b].nextElementSibling;
               thisList.removeAttribute("class");
@@ -591,7 +574,6 @@ function deleteItem() {
             }
           } else if (x === 4) {
             for (var b = 0; b < wednesdayItems.length; b += 3) {
-              var t = 0;
               var thisList = wednesdayItems[b];
               var thisX = wednesdayItems[b].nextElementSibling;
               thisList.removeAttribute("class");
@@ -603,7 +585,6 @@ function deleteItem() {
             }
           } else if (x === 5) {
             for (var b = 0; b < thursdayItems.length; b += 3) {
-              var t = 0;
               var thisList = thursdayItems[b];
               var thisX = thursdayItems[b].nextElementSibling;
               thisList.removeAttribute("class");
@@ -615,7 +596,6 @@ function deleteItem() {
             }
           } else if (x === 6) {
             for (var b = 0; b < fridayItems.length; b += 3) {
-              var t = 0;
               var thisList = fridayItems[b];
               var thisX = fridayItems[b].nextElementSibling;
               thisList.removeAttribute("class");
@@ -643,18 +623,15 @@ function deleteItem() {
   //saves updated data in local storage
   var inputArrayFormatted = JSON.stringify(inputArray);
   localStorage.setItem("item-array", inputArrayFormatted);
-
-  //selects all delete buttons
-  var deleteButtons = document.querySelectorAll(".delete-buttons");
 }
 
 // quote carousel
 
 $.ajax({
-  method: 'GET',
-  url: 'https://api.api-ninjas.com/v1/quotes?limit=10&category=' + category,
-  headers: { 'X-Api-Key': 'qqoTUSZvUbFCBjayEmFVIg==V6OGJcGtLVFiV2ym' },
-  contentType: 'application/json',
+  method: "GET",
+  url: "https://api.api-ninjas.com/v1/quotes?limit=10&category=" + category,
+  headers: { "X-Api-Key": "qqoTUSZvUbFCBjayEmFVIg==V6OGJcGtLVFiV2ym" },
+  contentType: "application/json",
   length: 10,
   success: function (result) {
     console.log(result);
@@ -721,11 +698,10 @@ $.ajax({
     authorInput9.append(authorFromArray9);
     quoteInput10.append(quoteFromArray10);
     authorInput10.append(authorFromArray10);
-
   },
   error: function ajaxError(jqXHR) {
-    console.error('Error: ', jqXHR.responseText);
-  }
+    console.error("Error: ", jqXHR.responseText);
+  },
 });
 
 var giphy;
