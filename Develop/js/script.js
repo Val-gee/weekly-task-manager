@@ -93,14 +93,14 @@ function resumeTimer() {
   }
 
   if (minutesLeft == 0 && secondsLeft == 0) {
-    $("#exampleModal").modal("show");
+    $("#myModal").modal("show");
   }
 
   countdown.textContent = minutesLeft + ":" + secondsLeft;
 
 }
   // Get the modal
-  var modal = document.getElementById("exampleModal");
+  var modal = document.getElementById("myModal");
 
   // called when modal opens
   modal.addEventListener("show.mdb.modal", (e) => {
