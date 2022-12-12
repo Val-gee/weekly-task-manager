@@ -103,7 +103,7 @@ function resumeTimer() {
   var modal = document.getElementById("myModal");
 
   // called when modal opens
-  modal.addEventListener("show.mdb.modal", (e) => {
+  modal.addEventListener("show.mdb.modal", function(e) {
     callGiphy();
   });
 
@@ -641,17 +641,81 @@ function deleteItem() {
 // quote carousel
 
 $.ajax({
-  method: "GET",
-  url: "https://api.api-ninjas.com/v1/quotes?limit=10&category=" + category,
-  headers: { "X-Api-Key": "qqoTUSZvUbFCBjayEmFVIg==V6OGJcGtLVFiV2ym" },
-  contentType: "application/json",
-  length: 10,
-  success: function (result) {
-    console.log(result);
-  },
-  error: function ajaxError(jqXHR) {
-    console.error("Error: ", jqXHR.responseText);
-  },
+    method: 'GET',
+    url: 'https://api.api-ninjas.com/v1/quotes?limit=10&category=' + category,
+    headers: { 'X-Api-Key': 'qqoTUSZvUbFCBjayEmFVIg==V6OGJcGtLVFiV2ym' },
+    contentType: 'application/json',
+    length: 10,
+    success: function (result) {
+        console.log(result);
+
+        var quoteInput1 = document.querySelector("#quote1");
+        var authorInput1 = document.querySelector("#author1");
+        var quoteInput2 = document.querySelector("#quote2");
+        var authorInput2 = document.querySelector("#author2");
+        var quoteInput3 = document.querySelector("#quote3");
+        var authorInput3 = document.querySelector("#author3");
+        var quoteInput4 = document.querySelector("#quote4");
+        var authorInput4 = document.querySelector("#author4");
+        var quoteInput5 = document.querySelector("#quote5");
+        var authorInput5 = document.querySelector("#author5");
+        var quoteInput6 = document.querySelector("#quote6");
+        var authorInput6 = document.querySelector("#author6");
+        var quoteInput7 = document.querySelector("#quote7");
+        var authorInput7 = document.querySelector("#author7");
+        var quoteInput8 = document.querySelector("#quote8");
+        var authorInput8 = document.querySelector("#author8");
+        var quoteInput9 = document.querySelector("#quote9");
+        var authorInput9 = document.querySelector("#author9");
+        var quoteInput10 = document.querySelector("#quote10");
+        var authorInput10 = document.querySelector("#author10");
+
+        var quoteFromArray1 = result[0].quote;
+        var authorFromArray1 = result[0].author;
+        var quoteFromArray2 = result[1].quote;
+        var authorFromArray2 = result[1].author;
+        var quoteFromArray3 = result[2].quote;
+        var authorFromArray3 = result[2].author;
+        var quoteFromArray4 = result[3].quote;
+        var authorFromArray4 = result[3].author;
+        var quoteFromArray5 = result[4].quote;
+        var authorFromArray5 = result[4].author;
+        var quoteFromArray6 = result[5].quote;
+        var authorFromArray6 = result[5].author;
+        var quoteFromArray7 = result[6].quote;
+        var authorFromArray7 = result[6].author;
+        var quoteFromArray8 = result[7].quote;
+        var authorFromArray8 = result[7].author;
+        var quoteFromArray9 = result[8].quote;
+        var authorFromArray9 = result[8].author;
+        var quoteFromArray10 = result[9].quote;
+        var authorFromArray10 = result[9].author;
+
+        quoteInput1.append(quoteFromArray1);
+        authorInput1.append(authorFromArray1);
+        quoteInput2.append(quoteFromArray2);
+        authorInput2.append(authorFromArray2);
+        quoteInput3.append(quoteFromArray3);
+        authorInput3.append(authorFromArray3);
+        quoteInput4.append(quoteFromArray4);
+        authorInput4.append(authorFromArray4);
+        quoteInput5.append(quoteFromArray5);
+        authorInput5.append(authorFromArray5);
+        quoteInput6.append(quoteFromArray6);
+        authorInput6.append(authorFromArray6);
+        quoteInput7.append(quoteFromArray7);
+        authorInput7.append(authorFromArray7);
+        quoteInput8.append(quoteFromArray8);
+        authorInput8.append(authorFromArray8);
+        quoteInput9.append(quoteFromArray9);
+        authorInput9.append(authorFromArray9);
+        quoteInput10.append(quoteFromArray10);
+        authorInput10.append(authorFromArray10);
+        
+    },
+    error: function ajaxError(jqXHR) {
+        console.error('Error: ', jqXHR.responseText);
+    }
 });
 
 var giphy;
