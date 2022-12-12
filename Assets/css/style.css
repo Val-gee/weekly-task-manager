@@ -1,8 +1,32 @@
-*{
-font-family: Arial, Helvetica, sans-serif;
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hide {
+  display: none;
+}
+
+.carouselFont {
+  font-family: "Comfortaa";
+  text-shadow: 1px 1px 1px lightgray;
+}
+
+body {
+  background-image: url("../images/nightsky.png");
 
 }
 
-.hide{
-    display: none;
+#greeting {
+    font-size: 44px;
+}
+
+#currentDate {
+    font-size: 32px;
+}
+
+#currentTime {
+    font-size: 24px;
+}
+section {
+  z-index: 2;
 }
