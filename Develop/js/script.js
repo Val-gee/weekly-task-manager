@@ -79,7 +79,7 @@ function resumeTimer() {
     clearInterval(timerInterval);
     secondsLeft = 60;
     minutesLeft = 59;
-
+   
     // alert("Time is up!");
     wasClicked = false;
     if (wasClicked === false) {
@@ -97,14 +97,15 @@ function resumeTimer() {
   }
 
   countdown.textContent = minutesLeft + ":" + secondsLeft;
-}
-// Get the modal
-var modal = document.getElementById("exampleModal");
 
-// called when modal opens
-modal.addEventListener("show.mdb.modal", (e) => {
-  callGiphy();
-});
+}
+  // Get the modal
+  var modal = document.getElementById("exampleModal");
+
+  // called when modal opens
+  modal.addEventListener("show.mdb.modal", (e) => {
+    callGiphy();
+  });
 
 startBtn.addEventListener("click", timer);
 
