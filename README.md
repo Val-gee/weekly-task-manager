@@ -7,7 +7,7 @@ This application is a task manager that organizes the user's weekly tasks by day
 
 ## Installation
 
-This application requires no installation and can be accessed on most web browsers at https://val-gee.github.io/project-1/.
+This application requires no installation and can be accessed on most web browsers at https://val-gee.github.io/weekly-task-manager/.
 
 ## Usage
 
