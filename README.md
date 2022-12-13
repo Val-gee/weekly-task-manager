@@ -24,7 +24,7 @@ To user the quote carousel, simply click the arrows on either side of the carous
 
 ## Credits
 
-Created by Jung Dettelback, Valentina Guevara, Patrick Morris, and Ben Yomtov
+Created by Jung Dettelback (https://github.com/jdettelback), Valentina Guevara (https://github.com/Val-gee), Patrick Morris (https://github.com/pmorris50), and Ben Yomtov (https://github.com/benyomtov).
 
 APIs used: 
 
