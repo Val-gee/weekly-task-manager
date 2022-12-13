@@ -1,122 +1,42 @@
-# 07 Project 1: Interactive Front-End Application
+# Motivational Calendar
 
-At the conclusion of each phase of this course, you’ll work with a group of your fellow students to create a **project**. A project is collaborative work among a group of developers to create an application that solves a real-world problem. Projects model the experience you’ll encounter in every development role at any company, from large multinational businesses to small startups. Coding is collaborative.
+## Description
 
-A project is a bit different from the Challenge assignments you’ve worked on so far. One of the biggest differences is that you’ll no longer build an application by yourself! This has some advantages&mdash;you won’t have to do all of the work, you can divide up duties, and you can share skills and knowledge with other developers and lean on their strengths. This can also be challenging if you’re used to working alone. Constant communication and time management are just two of the skills you’ll need to practice to make sure everyone in your group works together to complete the project. 
+This application is a task manager that organizes the user's weekly tasks by day of the week. The application has features to keep the user focused and motivated. There is a productivity timer that is set for an hour to hold the user accountable to stay focused for that period of time. When the timer ends, there is a modal that appears with a semi-randomized gif to congratulate the user for staying focused. There is also a section of the page which contains motivational quotes and calming nature photos to motivate and inspire the user. The webpage also features a task organizer that allows the user to input tasks into a weekly calendar or a general to-do list. The tasks the user inputs are saved for future reference and can be deleted as tasks are completed. The purpose of this application is to help the user organize their work schedule in order to optimize their productivity. We learned how to work with Git and Github on the same project as a group and applied the material covered in the first portion of our class in our application. 
 
-Projects won’t provide you with a user story or acceptance criteria, because you and your group will create them once you decide which real-world problem your application will solve. This lack of constraints can be freeing in a way, because you have room to build what you want, but it also means that you have to decide what those constraints are before you can start working.
 
-Finally, a project requires a presentation, because you’re trying to convince an audience that it serves a purpose. Your instructional staff and fellow students are investors, and you’re pitching your creation to them&mdash;an experience that developers are required to do frequently. Your presentation is just as important as the actual project, so take it just as seriously.
+## Installation
 
-## Project Requirements
+This application requires no installation and can be accessed on most web browsers at https://val-gee.github.io/project-1/.
 
-You and your group will use everything you’ve learned over the past six modules to create a real-world front-end application that you’ll be able to showcase to potential employers. The user story and acceptance criteria will depend on the project that you create, but your project must fulfil the following requirements:
+## Usage
 
-* Use a CSS framework other than Bootstrap.
+To use the calendar, input the task you want to schedule and select from either the To Do list or one of the days of the week. Click send and your entry will be saved and posted to the page. To delete a task, click the delete button next to it.
 
-* Be deployed to GitHub Pages.
+To use the productivity timer, click the Start button. To pause, click the same button again. To restart the timer, click again. When the timer ends, a modal will appear with a gif. To close the modal, click the Close button on the bottom.
 
-* Be interactive (i.e., accept and respond to user input).
+To user the quote carousel, simply click the arrows on either side of the carousel to navigate from quote to quote. To go to a specific slide in the carousel, the user can click one of the flat ___ icons at the bottom of the carousel. 
 
-* Use at least two [server-side APIs](https://coding-boot-camp.github.io/full-stack/apis/api-resources).
+![screenshot](./Assets/images/screenshot.png)
+![screenshot-bottom](./Assets/images/screenshot2.png)
+![screenshot-timer](./Assets/images/screenshot3.png)
+![screenshot-modal](./Assets/images/screenshot4.png)
 
-* Does not use alerts, confirms, or prompts (use modals).
+## Credits
 
-* Use client-side storage to store persistent data.
+Created by Jung Dettelback, Valentina Guevara, Patrick Morris, and Ben Yomtov
 
-* Be responsive.
+APIs used: 
 
-* Have a polished UI.
+OpenWeather https://openweathermap.org/api
+Day.js https://day.js.org/
+Giphy https://developers.giphy.com/
+API Ninjas https://api-ninjas.com/
 
-* Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
+MDBootstrap was used to style this application. https://mdbootstrap.com/
 
-* Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
+Images sourced from https://unsplash.com/ and https://pixabay.com/photos/clouds-nature-sky-cumulus-weather-4215608/
 
-## Presentation Requirements
+## License
 
-Use this [project presentation template](https://docs.google.com/presentation/d/10QaO9KH8HtUXj__81ve0SZcpO5DbMbqqQr4iPpbwKks/edit?usp=sharing) to address the following: 
-
-* Elevator pitch: a one minute description of your application
-
-* Concept: What is your user story? What was your motivation for development?
-
-* Process: What were the technologies used? How were tasks and roles broken down and assigned? What challenges did you encounter? What were your successes?
-
-* Demo: Show your stuff!
-
-* Directions for Future Development
-
-* Links to the deployed application and the GitHub repository
-
-## Grading Requirements
-
-This project is graded based on the following criteria:
-
-### Technical Acceptance Criteria: 25%
-
-* Satisfies the following code requirements:
-
-  * Application uses at least two [server-side APIs](https://coding-boot-camp.github.io/full-stack/apis/api-resources)
-
-  * Application uses client-side storage to store persistent data.
-
-  * Application doesn't use JS alerts, prompts, or confirms (uses modals instead).
-
-  * Application uses a CSS framework other than Bootstrap.
-
-  * Application is interactive (accepts and responds to user input)
-
-### Concept 10%
-
-* Application should be a unique and novel idea.
-
-* Your group should clearly and concisely articulate your project idea.
-
-### Deployment: 20%
-
-* Application deployed at live URL and loads with no errors.
-
-* Application GitHub URL submitted.
-
-### Repository Quality: 10%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains a quality README file with description, screenshot, and link to deployed application.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application is responsive.
-
-### Presentation 10%
-
-* Your group should present using a slide deck.
-
-* Every group member should speak during the presentation.
-
-* Your presentation should follow the [Project Presentation Template](https://docs.google.com/presentation/d/10QaO9KH8HtUXj__81ve0SZcpO5DbMbqqQr4iPpbwKks/edit?usp=sharing).
-
-### Collaboration 10%
-
-* There are no major disparities in the number of GitHub contributions between group members.
-
-## How to Submit Your Interactive Front-End Project
-
-**Each member of your group** is required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository, with a unique name and a README describing the project.
-
----
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+No License.
