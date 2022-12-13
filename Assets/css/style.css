@@ -12,7 +12,9 @@
 }
 
 body {
-  background-image: url("../images/nightsky.png");
+  background-image: url("../images/bettersky.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 
 }
 
